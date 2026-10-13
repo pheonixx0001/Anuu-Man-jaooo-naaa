@@ -4,815 +4,865 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f7">
-<title>A Little World for Anu ♡</title>
+<title>For My Anu ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 
 <style>
-:root{
- --pink:#ff83b6;--pink2:#ffd4e6;--rose:#c6538c;
- --purple:#a38be1;--ink:#63465d;--muted:#896f83;
- --paper:rgba(255,255,255,.83);--border:#f6dce9;
- --shadow:0 14px 40px rgba(164,94,135,.12);
- --radius:25px;
+:root {
+  --pink:#ffafcb;
+  --hot:#ee77a5;
+  --deep:#c95785;
+  --pale:#fff0f6;
+  --cream:#fffaf5;
+  --ink:#80516a;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{
- margin:0;color:var(--ink);font-family:Nunito,sans-serif;
- background:linear-gradient(140deg,#fff0f7,#f5edff 52%,#fff4e5);
- min-height:100vh;overflow-x:hidden;transition:background .4s;
-}
-button,input{font:inherit}
-button{cursor:pointer;color:inherit}
-button:focus-visible,a:focus-visible{outline:3px solid #ca5791;outline-offset:4px}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-::selection{background:#ffd0e5}
-.container{width:min(1240px,92%);margin:auto}
-button:active{transform:scale(.97)}
-h1,h2,h3,p{overflow-wrap:anywhere}
-h2{font:clamp(2rem,4vw,3rem) "Playfair Display",serif;margin:10px 0}
-h3{margin:8px 0}
-p{line-height:1.8}
-button:disabled{opacity:.6;cursor:default}
 
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
-@keyframes wiggle{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
-@keyframes sparkle{0%,100%{opacity:.35;scale:.8}50%{opacity:1;scale:1.2}}
-@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}
-@keyframes rise{to{transform:translateY(-180px) rotate(25deg);opacity:0}}
-@keyframes pop{0%{transform:scale(.75);opacity:0}100%{transform:scale(1);opacity:1}}
-@keyframes glow{0%,100%{box-shadow:0 0 12px #ff9bc44c}50%{box-shadow:0 0 28px #ff9bc477}}
-@keyframes shimmer{to{background-position:200% center}}
-@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+* {box-sizing:border-box;margin:0;padding:0}
 
-#particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
-.particle{position:absolute;top:-30px;animation:fall linear forwards;opacity:.8}
-.floating-hearts{position:fixed;inset:0;pointer-events:none;z-index:100;overflow:hidden}
+html {scroll-behavior:smooth}
 
-header{
- position:sticky;top:0;z-index:30;
- background:rgba(255,249,253,.88);
- backdrop-filter:blur(18px);border-bottom:1px solid var(--border)
+body {
+  background:var(--pale);
+  color:var(--ink);
+  font-family:Nunito,sans-serif;
+  overflow-x:hidden;
 }
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px}
-.logo{font:1.5rem Pacifico,cursive;color:var(--rose);white-space:nowrap}
-.navlinks{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
-.navlinks a{font-size:.87rem;font-weight:900;padding:10px 12px;border-radius:30px;transition:.2s}
-.navlinks a:hover,.navlinks a.active{background:#ffe3ef;color:#bb4f87}
-.navtools{display:flex;gap:7px}
-.iconbtn,.softbtn{
- background:#fff9;border:1px solid var(--border);
- padding:10px 13px;border-radius:25px;transition:.2s
-}
-.iconbtn:hover,.softbtn:hover{background:#ffe3ef}
 
-.hero{padding:65px 0 58px;position:relative}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:38px}
-.eyebrow{
- display:inline-block;padding:9px 15px;border:1px solid var(--border);
- border-radius:30px;background:#fff9;font-size:.82rem;font-weight:900
-}
-.hero h1{font:clamp(3rem,7vw,6rem)/1.12 Pacifico,cursive;color:#b95089;margin:22px 0}
-.hero h1 span{color:#f08cb9}
-.hero-copy>p{max-width:560px;color:var(--muted);font-size:1.05rem}
-.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:22px}
-.btn{
- border:0;border-radius:30px;padding:13px 20px;
- background:linear-gradient(135deg,#ff94bd,#e96da7);
- color:white;font-weight:900;box-shadow:0 8px 20px #e96da72b;transition:.25s
-}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px #e96da744}
-.btn.alt{background:#fff9;color:#ad5183;border:1px solid var(--border);box-shadow:none}
-.art{position:relative;min-height:365px;display:grid;place-items:center}
-.orb{
- width:min(330px,76vw);aspect-ratio:1;border-radius:46% 54% 51% 49%;
- background:linear-gradient(140deg,#ffd3e5,#e4d8ff 55%,#fff0c7);
- display:grid;place-items:center;position:relative;
- box-shadow:inset 0 0 45px #fff9,0 25px 70px #bd7ba12b;
- animation:float 5s ease-in-out infinite
-}
-.hero-cat{font-size:clamp(8rem,19vw,11rem);filter:drop-shadow(0 12px 9px #97608428);animation:wiggle 4s infinite}
-.spark{position:absolute;font-size:2rem;animation:sparkle 2s infinite}
-.s1{left:6%;top:12%}.s2{right:5%;top:20%;animation-delay:.6s}
-.s3{left:14%;bottom:9%;animation-delay:1s}.s4{right:10%;bottom:8%}
-.sticker{
- position:absolute;background:#fffdf7;border:1px solid #f5dbe7;
- padding:12px 15px;border-radius:15px;box-shadow:var(--shadow);
- font:1rem Pacifico,cursive
-}
-.sticker.a{right:0;top:6%;transform:rotate(5deg)}
-.sticker.b{left:0;bottom:5%;transform:rotate(-5deg)}
+button {font:inherit;cursor:pointer}
 
-.section{padding:38px 0 50px}
-.heading{text-align:center;max-width:710px;margin:0 auto 28px}
-.kicker{font-size:.77rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#c86a9c}
-.heading p{color:var(--muted);margin:0}
-.panel{
- background:var(--paper);border:1px solid #fff;
- border-radius:var(--radius);padding:24px;
- box-shadow:var(--shadow);backdrop-filter:blur(12px)
+button:focus-visible {
+  outline:3px solid var(--deep);
+  outline-offset:4px;
 }
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.feature{text-align:center;transition:.25s}
-.feature:hover{transform:translateY(-5px)}
-.feature-icon{font-size:2.7rem}
-.feature p{color:var(--muted);margin-bottom:0}
 
-.divider{
- display:flex;align-items:center;gap:12px;
- color:#d17aa6;justify-content:center;margin:24px 0
-}
-.divider:before,.divider:after{content:"";height:1px;background:var(--border);flex:1}
+::selection {background:#ffc3da;color:#8c4163}
 
-.letter{max-width:850px;margin:auto;position:relative;overflow:hidden}
-.letter-paper{
- background:linear-gradient(145deg,#fffafc,#fff0f6);
- border:1px solid #f3d4e4;border-radius:10px 28px 10px 28px;
- padding:clamp(24px,5vw,48px);position:relative
+#hearts {
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:30;
 }
-.letter-paper:after{content:"♡";position:absolute;right:12px;bottom:-70px;font-size:12rem;color:#f2c4d9;opacity:.28}
-.letter-paper h3{font:2rem Pacifico,cursive;color:#ba5b90}
-.letter-paper p{white-space:pre-line;position:relative;z-index:1}
-.signature{font:1.5rem Pacifico,cursive;text-align:right;color:#ba5b90}
 
-.games-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.game{text-align:center;position:relative;overflow:hidden}
-.game-top{font-size:.75rem;letter-spacing:1px;font-weight:900;color:#c36b99;text-transform:uppercase}
-.game-illustration{font-size:4.5rem;min-height:100px;display:grid;place-items:center;animation:float 4s infinite}
-.game p{color:var(--muted);min-height:52px}
-.game-result{min-height:27px;margin-top:12px;font-weight:900;color:#bd578d}
-.meter{height:9px;border-radius:20px;background:#f5d9e7;overflow:hidden;margin:12px 0}
-.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff89b7,#a993e8);transition:width .3s}
-.choices{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
-.choices button{padding:10px 12px;background:#fff9;border:1px solid var(--border);border-radius:13px}
-.choices button:hover{background:#ffe2ee}
-.heart-box{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.heart-box button{font-size:1.5rem;border:1px solid var(--border);border-radius:15px;background:#fff9;padding:10px}
-.heart-box button:hover{transform:translateY(-3px)}
+.heart {
+  position:absolute;
+  bottom:-60px;
+  animation:rise linear forwards;
+  opacity:.8;
+}
 
-.note-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.note-tile{
- border:1px solid #f4dce8;border-radius:20px;min-height:165px;
- padding:17px 12px;background:linear-gradient(145deg,#fff8fb,#fff2e8);
- display:flex;align-items:center;justify-content:center;flex-direction:column;
- gap:9px;text-align:center;font-weight:800;line-height:1.7;transition:.25s
+@keyframes rise {
+  to {transform:translateY(-115vh) rotate(35deg);opacity:0}
 }
-.note-tile:hover{transform:rotate(-2deg) translateY(-4px)}
-.note-tile .nicon{font-size:2.1rem}
 
-.album{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.photo-slot{
- min-height:190px;border-radius:19px;border:2px dashed #eabbd3;
- background:linear-gradient(145deg,#fff2f8,#f6efff);
- display:grid;place-items:center;text-align:center;padding:12px;
- overflow:hidden;position:relative
+@keyframes bob {
+  0%,100% {transform:translateY(0) rotate(-3deg)}
+  50% {transform:translateY(-13px) rotate(3deg)}
 }
-.photo-slot img{width:100%;height:190px;object-fit:cover;position:absolute;inset:0}
-.photo-slot span{position:relative;z-index:1}
-.photo-slot input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2}
-.photo-slot.has-photo{border-style:solid}
 
-.theme-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
-.theme{
- height:115px;border-radius:18px;border:3px solid transparent;
- position:relative;overflow:hidden;background-size:cover;background-position:center;
+@keyframes pulse {
+  0%,100% {transform:scale(1)}
+  50% {transform:scale(1.12)}
 }
-.theme:after{
- content:attr(data-label);position:absolute;bottom:0;left:0;right:0;
- padding:9px 3px;background:#fffD;font-size:.78rem;font-weight:900
-}
-.theme.active{border-color:#d25b98;box-shadow:0 0 0 3px #ffc6df}
-.upload-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px;align-items:center}
-.upload-row input{max-width:100%}
 
-.surprise{text-align:center;padding:36px 20px}
-.gift{font-size:4rem;animation:float 3s infinite}
-.surprise-content{display:none;max-width:620px;margin:20px auto 0;animation:pop .3s}
-.surprise-content.open{display:block}
+@keyframes twinkle {
+  0%,100% {opacity:.3;transform:scale(.7)}
+  50% {opacity:1;transform:scale(1.25)}
+}
 
-.quiz-options{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.quiz-options button{background:#fff9;border:1px solid var(--border);border-radius:25px;padding:11px 16px}
-.quiz-result{min-height:30px;text-align:center;font-weight:900;color:#b85087;margin-top:16px}
+@keyframes reveal {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
 
-.footer{text-align:center;padding:40px 0 48px;color:var(--muted)}
-.footer-cat{font-size:2.6rem}
-.footer-heart{font-size:1.4rem;color:#e37eaa}
+@keyframes wiggle {
+  0%,100% {transform:rotate(-4deg)}
+  50% {transform:rotate(4deg)}
+}
 
-.toast{
- position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);
- opacity:0;pointer-events:none;z-index:150;background:#704a68;color:white;
- border-radius:25px;padding:13px 20px;max-width:90%;text-align:center;transition:.25s
+.topbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 7%;
+  background:#fffaf5eF;
+  border-bottom:1px solid #f8d6e3;
+  position:sticky;
+  top:0;
+  z-index:25;
+  backdrop-filter:blur(14px);
 }
-.toast.show{opacity:1;transform:translate(-50%,0)}
-#modal{
- display:none;position:fixed;inset:0;background:#38253f9c;z-index:120;
- padding:20px;place-items:center
-}
-#modal.open{display:grid}
-.modal-card{
- width:min(450px,100%);background:#fff8fc;border-radius:27px;
- padding:30px;text-align:center;box-shadow:var(--shadow);animation:pop .3s
-}
-.modal-art{font-size:3.5rem}
-.modal-card h3{font:1.7rem "Playfair Display",serif;color:#b95089}
 
-body.dark{
- --ink:#fff0fa;--muted:#e2cde1;--paper:rgba(42,30,61,.9);
- --border:#563d5d;
- background:linear-gradient(140deg,#19152f,#332346,#1e263d);
+.brand {
+  font-size:19px;
+  font-weight:900;
+  color:var(--deep);
 }
-body.dark header{background:#20172fe8}
-body.dark .logo,body.dark .hero h1,body.dark h2,body.dark .letter-paper h3{color:#ffb5d7}
-body.dark .letter-paper{background:linear-gradient(145deg,#33243f,#442a43)}
-body.dark .note-tile{background:linear-gradient(145deg,#39263f,#472f49)}
-body.dark .theme:after{background:#30213eea;color:#fff}
-body.dark .photo-slot{background:#33243f}
 
-@media(max-width:950px){
- .nav{flex-wrap:wrap;justify-content:center;padding:12px 0}
- .navlinks{order:3;width:100%}
- .hero-grid{gap:15px}
- .grid4,.note-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .games-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .theme-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.brand span {color:#ff9cbd}
+
+.navbtn {
+  padding:10px 17px;
+  border:1px solid #f4bfd3;
+  background:#fff;
+  color:var(--deep);
+  border-radius:30px;
+  font-weight:800;
 }
-@media(max-width:620px){
- .container{width:92%}
- .navlinks a{font-size:.78rem;padding:8px 9px}
- .logo{font-size:1.3rem}
- .hero{padding:30px 0}
- .hero-grid{grid-template-columns:1fr;text-align:center}
- .hero-copy>p{margin-left:auto;margin-right:auto}
- .actions{justify-content:center}
- .art{order:-1;min-height:285px}
- .orb{width:235px}
- .hero-cat{font-size:7rem}
- .sticker{font-size:.82rem}
- .grid2,.grid3,.games-grid,.album{grid-template-columns:1fr}
- .grid4,.note-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .panel{padding:19px}
- .note-tile{min-height:140px;font-size:.9rem}
- .theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .theme{height:100px}
- .section{padding:28px 0 35px}
+
+.hero {
+  min-height:88vh;
+  padding:85px 22px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 15% 20%,#ffdce8 0,transparent 35%),
+    radial-gradient(ellipse at 90% 80%,#f8d4f0 0,transparent 35%),
+    #fff4f8;
 }
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+
+.hero-inner {
+  max-width:800px;
+  animation:reveal 1s ease both;
+}
+
+.pill {
+  display:inline-block;
+  padding:10px 18px;
+  border:1px solid #f6bfd3;
+  border-radius:30px;
+  background:#fffafc;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--deep);
+}
+
+h1 {
+  margin:25px 0 15px;
+  font-size:clamp(55px,10vw,110px);
+  line-height:.98;
+  letter-spacing:-4px;
+  color:#e879a3;
+}
+
+h1 em {
+  display:block;
+  font-family:Caveat,cursive;
+  font-weight:600;
+  font-size:1.05em;
+  color:#c95785;
+  letter-spacing:0;
+}
+
+.hero-art {
+  margin:30px auto;
+  width:180px;
+  height:155px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  animation:bob 3s ease-in-out infinite;
+}
+
+.hero-art svg {width:100%;height:100%;overflow:visible}
+
+.spark {
+  position:absolute;
+  color:#e77ca3;
+  font-size:25px;
+  animation:twinkle 2s infinite;
+}
+
+.spark.a {top:0;left:-15px}
+.spark.b {right:-15px;top:22px;animation-delay:.7s}
+.spark.c {bottom:5px;left:5px;animation-delay:1s}
+
+.description {
+  max-width:560px;
+  margin:0 auto;
+  line-height:2;
+  color:#98738a;
+  font-size:16px;
+}
+
+.primary,.secondary {
+  padding:15px 25px;
+  border-radius:35px;
+  font-weight:900;
+  transition:transform .25s,box-shadow .25s;
+}
+
+.primary {
+  border:0;
+  color:white;
+  background:linear-gradient(135deg,#ffb6cf,#e86e9e);
+  box-shadow:0 8px 25px #e879a345;
+}
+
+.secondary {
+  border:1px solid #f1b9ce;
+  color:var(--deep);
+  background:white;
+}
+
+.primary:hover,.secondary:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px #e879a32b;
+}
+
+.hero .primary {margin-top:28px}
+
+.tiny-note {
+  margin-top:20px;
+  font-size:12px;
+  color:#ba8ca2;
+}
+
+.section {
+  max-width:1100px;
+  margin:auto;
+  padding:90px 23px;
+  text-align:center;
+}
+
+.eyebrow {
+  text-transform:uppercase;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#d37d9f;
+  font-weight:900;
+}
+
+h2 {
+  font-family:Caveat,cursive;
+  color:var(--deep);
+  font-size:clamp(43px,7vw,69px);
+  font-weight:600;
+  margin:10px 0;
+}
+
+.intro {
+  max-width:610px;
+  margin:0 auto 35px;
+  color:#9d7b8f;
+  line-height:1.9;
+}
+
+.paper-bg {
+  background:#ffe4ee;
+  border-radius:45px;
+  max-width:none;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+  margin-top:38px;
+  text-align:left;
+}
+
+.card {
+  border:1px solid #f6d3e0;
+  border-radius:25px;
+  padding:27px;
+  background:#fffafc;
+  box-shadow:0 8px 25px #b85a7910;
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-7px) rotate(-1deg);
+  box-shadow:0 15px 30px #b85a7917;
+}
+
+.card .icon {font-size:36px;margin-bottom:13px}
+.card h3 {color:#cb628b;font-size:18px;margin-bottom:10px}
+.card p {font-size:14px;line-height:1.9;color:#96788b}
+
+.envelope-area {
+  max-width:720px;
+  margin:35px auto 0;
+}
+
+.envelope {
+  min-height:280px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#ffc5d8,#f8a9c6);
+  border:2px solid #f5b0ca;
+  box-shadow:0 18px 40px #b54f751b;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.envelope:before,.envelope:after {
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid #fff8;
+  border-radius:45%;
+  transform:rotate(45deg);
+}
+
+.envelope:before {left:-190px;top:-150px}
+.envelope:after {right:-190px;bottom:-180px}
+
+.envelope-content {position:relative;z-index:1;padding:25px}
+
+.seal {
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  background:#fff9fb;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  color:#dc6594;
+  font-size:35px;
+  animation:pulse 1.8s infinite;
+  box-shadow:0 6px 20px #a8476d22;
+}
+
+.handwriting {
+  font-family:Caveat,cursive;
+  font-size:31px;
+  color:#b94d7b;
+}
+
+.envelope-content p {
+  margin:8px 0 20px;
+  font-size:13px;
+  color:#a34e75;
+}
+
+.letter {
+  display:none;
+  text-align:left;
+  background:#fffdf8;
+  border:1px solid #f4d9df;
+  border-radius:20px;
+  padding:clamp(23px,6vw,52px);
+  margin-top:22px;
+  box-shadow:0 12px 35px #a94c7010;
+  line-height:2;
+  animation:reveal .7s ease both;
+}
+
+.letter.open {display:block}
+
+.letter h3 {
+  font-family:Caveat,cursive;
+  font-size:37px;
+  color:#ce608b;
+  margin-bottom:20px;
+}
+
+.letter p {margin:15px 0}
+
+.signature {
+  font-family:Caveat,cursive;
+  font-size:28px;
+  color:#c65381;
+  text-align:right;
+}
+
+.promises {
+  max-width:700px;
+  margin:30px auto;
+  display:grid;
+  gap:14px;
+  text-align:left;
+}
+
+.promise {
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:#fffafc;
+  border:1px solid #f6d6e3;
+  padding:19px;
+  border-radius:18px;
+  line-height:1.8;
+}
+
+.promise span {font-size:23px}
+
+.kitty-world {
+  background:#fff9fc;
+  border:1px solid #f8d6e3;
+  border-radius:30px;
+  padding:35px 20px;
+  margin-top:25px;
+}
+
+.kitty-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  max-width:640px;
+  margin:25px auto;
+}
+
+.kitty-tile {
+  background:#fff0f6;
+  border:1px solid #f4cfdf;
+  border-radius:23px;
+  padding:17px 8px;
+  transition:.25s;
+}
+
+.kitty-tile:hover {transform:translateY(-7px) rotate(3deg)}
+
+.kitty-tile svg {width:100%;max-width:100px;height:90px}
+
+.kitty-tile p {
+  color:#c45d88;
+  font-family:Caveat,cursive;
+  font-size:21px;
+}
+
+.kitty-tile button {
+  border:1px solid #f2c3d6;
+  background:white;
+  color:#c45d88;
+  border-radius:20px;
+  padding:7px 12px;
+  margin-top:10px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.game-message {
+  min-height:30px;
+  margin:15px 0;
+  font-weight:800;
+  color:#c45d88;
+}
+
+.reply {
+  max-width:600px;
+  padding:32px 24px;
+  margin:35px auto 0;
+  border:1px solid #f5d2e0;
+  border-radius:28px;
+  background:#fffafd;
+}
+
+.reply-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  margin-top:20px;
+}
+
+#replyMessage {
+  min-height:60px;
+  margin-top:20px;
+  line-height:1.9;
+  color:#c65381;
+  font-weight:800;
+}
+
+footer {
+  padding:45px 20px;
+  text-align:center;
+  background:#fff9fc;
+  border-top:1px solid #f5d9e4;
+  color:#b58199;
+  line-height:2;
+}
+
+footer .handwriting {font-size:29px}
+
+.backtop {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:#e879a3;
+  color:white;
+  font-size:23px;
+  box-shadow:0 6px 18px #b94d7b33;
+  z-index:20;
+}
+
+@media(max-width:700px) {
+  .topbar {padding:15px 5%}
+  .brand {font-size:16px}
+  .navbtn {font-size:12px;padding:9px 12px}
+  .hero {min-height:83vh;padding:65px 20px}
+  h1 {letter-spacing:-2px}
+  .section {padding:68px 18px}
+  .cards {grid-template-columns:1fr}
+  .kitty-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .paper-bg {border-radius:28px}
+  .envelope {min-height:250px}
+  .description {font-size:15px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
 }
 </style>
 </head>
 
 <body>
-<div id="particles"></div>
-<div class="floating-hearts" id="floatingHearts"></div>
+<div id="hearts"></div>
 
-<header>
- <div class="container nav">
-  <a class="logo" href="#home">🐱 For Anu ♡</a>
-  <nav class="navlinks">
-   <a href="#home">⌂ Home</a>
-   <a href="#letter">♡ Letter</a>
-   <a href="#games">♧ Games</a>
-   <a href="#notes">✿ Notes</a>
-   <a href="#gallery">♡ Gallery</a>
-   <a href="#surprise">✧ Surprise</a>
-  </nav>
-  <div class="navtools">
-   <button class="iconbtn" onclick="goTo('themes')" aria-label="Change background">🎨</button>
-   <button class="iconbtn" onclick="toggleDark()" id="darkBtn" aria-label="Toggle night theme">🌙</button>
-  </div>
- </div>
+<header class="topbar">
+  <div class="brand">for my Anu <span>♡</span></div>
+  <button class="navbtn" onclick="go('letterSection')">a letter for you 💌</button>
 </header>
 
 <main>
-<!-- HERO -->
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div class="hero-copy">
-   <span class="eyebrow">✦ a little world made with care ✦</span>
-   <h1>Hii Anuuu<span> ♡</span></h1>
-   <p>
-    I know things feel a little difficult right now.
-    I made this tiny corner of the internet with cute cats,
-    little games and a note for you. There's no pressure
-    to feel better instantly. Take your time.
-   </p>
-   <div class="actions">
-    <button class="btn" onclick="goTo('letter')">💌 Read my note</button>
-    <button class="btn alt" onclick="goTo('games')">🐾 Explore the kitty world</button>
-   </div>
+<section class="hero">
+  <span class="spark" style="top:15%;left:10%">✧</span>
+  <span class="spark" style="top:30%;right:12%">♡</span>
+  <span class="spark" style="bottom:18%;left:16%">✦</span>
+  <span class="spark" style="bottom:22%;right:17%">୨୧</span>
+
+  <div class="hero-inner">
+    <span class="pill">A LITTLE CORNER OF MY HEART 🎀</span>
+
+    <h1>Hiii, my <em>Anuuuu ♡</em></h1>
+
+    <div class="hero-art">
+      <span class="spark a">✧</span>
+      <span class="spark b">♡</span>
+      <span class="spark c">✦</span>
+      <svg viewBox="0 0 180 150" role="img" aria-label="Cute pink bow and kitten">
+        <ellipse cx="90" cy="126" rx="55" ry="8" fill="#f5c8d8"/>
+        <path d="M66 48 L49 16 L83 35 Z" fill="#fffaf5" stroke="#c97b98" stroke-width="2"/>
+        <path d="M114 48 L131 16 L97 35 Z" fill="#fffaf5" stroke="#c97b98" stroke-width="2"/>
+        <path d="M48 19 L67 43 L79 37 Z" fill="#f3a5c0"/>
+        <path d="M132 19 L113 43 L101 37 Z" fill="#f3a5c0"/>
+        <ellipse cx="90" cy="76" rx="44" ry="42" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+        <path d="M63 51 L56 31 L80 45 Z" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+        <path d="M117 51 L124 31 L100 45 Z" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+        <path d="M63 48 L61 38 L74 46 Z M117 48 L119 38 L106 46 Z" fill="#f5abc4"/>
+        <ellipse cx="76" cy="75" rx="4" ry="6" fill="#795369"/>
+        <ellipse cx="104" cy="75" rx="4" ry="6" fill="#795369"/>
+        <path d="M87 84 Q90 89 93 84" fill="none" stroke="#ce7797" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="66" cy="85" rx="7" ry="4" fill="#ffc2d7"/>
+        <ellipse cx="114" cy="85" rx="7" ry="4" fill="#ffc2d7"/>
+        <path d="M82 94 Q90 102 98 94" fill="none" stroke="#c97b98" stroke-width="2" stroke-linecap="round"/>
+        <path d="M77 40 Q57 25 49 43 Q45 57 76 54 Z" fill="#ffabc8" stroke="#e779a3" stroke-width="2"/>
+        <path d="M103 40 Q123 25 131 43 Q135 57 104 54 Z" fill="#ffabc8" stroke="#e779a3" stroke-width="2"/>
+        <circle cx="90" cy="47" r="8" fill="#e879a3" stroke="#fff0f6" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <p class="description">
+      I made a tiny pink world just for you, meri Anu.
+      There are little hearts, little kitties, and a little
+      letter from someone who wants to make things right. 💗
+    </p>
+
+    <button class="primary" onclick="go('letterSection')">
+      open your little surprise ♡
+    </button>
+    <p class="tiny-note">handmade with love, especially for you ✧</p>
   </div>
-  <div class="art">
-   <div class="orb">
-    <span class="spark s1">♡</span>
-    <span class="spark s2">✦</span>
-    <span class="spark s3">🌸</span>
-    <span class="spark s4">✨</span>
-    <div class="hero-cat">🐱</div>
-   </div>
-   <div class="sticker a">for Anu 🌷</div>
-   <div class="sticker b">take your time ♡</div>
-  </div>
- </div>
 </section>
 
-<!-- REMINDERS -->
 <section class="section">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">a gentle reminder</span>
-   <h2>Your feelings matter ♡</h2>
-   <p>Three little things worth remembering, even on a difficult day.</p>
+  <span class="eyebrow">a little reminder</span>
+  <h2>You matter, Anuuu 🌷</h2>
+  <p class="intro">
+    You don't need to hide your feelings or pretend you're okay.
+    Your feelings deserve patience, kindness and understanding.
+  </p>
+
+  <div class="cards">
+    <article class="card">
+      <div class="icon">🧸</div>
+      <h3>Your feelings matter</h3>
+      <p>I want to understand what hurt you instead of brushing your feelings aside.</p>
+    </article>
+    <article class="card">
+      <div class="icon">🎀</div>
+      <h3>We can learn</h3>
+      <p>We won't always understand everything perfectly, but we can keep trying to communicate better.</p>
+    </article>
+    <article class="card">
+      <div class="icon">💌</div>
+      <h3>No pressure, okay?</h3>
+      <p>You can take your time. You don't have to be happy before you're ready.</p>
+    </article>
   </div>
-  <div class="grid3">
-   <article class="panel feature">
-    <div class="feature-icon">🫶🏻</div>
-    <h3>I'll listen</h3>
-    <p>You can tell me what hurt you. I'll try to understand instead of immediately defending myself.</p>
-   </article>
-   <article class="panel feature">
-    <div class="feature-icon">🌷</div>
-    <h3>No pressure</h3>
-    <p>You don't have to forgive someone on a timer or pretend you're okay before you are.</p>
-   </article>
-   <article class="panel feature">
-    <div class="feature-icon">🐈</div>
-    <h3>Little steps</h3>
-    <p>Understanding each other takes patience. One calm conversation at a time is enough.</p>
-   </article>
-  </div>
- </div>
 </section>
 
-<!-- APOLOGY LETTER -->
-<section class="section" id="letter">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">open whenever you're ready</span>
-   <h2>A little note for you 💌</h2>
-   <p>Not a perfect speech. Just an honest message.</p>
-  </div>
-  <article class="letter letter-paper">
-   <h3>Dear Anu ♡</h3>
-   <p id="letterText">Hey Anuuu,
+<section class="section paper-bg" id="letterSection">
+  <span class="eyebrow">a little letter, just for you</span>
+  <h2>Open when you're ready 💌</h2>
+  <p class="intro">
+    There's something I want to tell you, without interrupting,
+    arguing or making excuses.
+  </p>
 
-I know you're upset with me, and I'm sorry for my part in that. I don't want to dismiss how you feel or make excuses instead of trying to understand.
-
-I know that saying sorry is only the beginning. What matters is listening properly, taking your feelings seriously and making a real effort to do better.
-
-You matter as a person, and your feelings deserve kindness and respect. I want us to be able to talk honestly, even when a conversation is difficult.
-
-You don't have to forgive me immediately, and you don't need to pretend you're happy just to make things easier. When you're ready, I'd like to hear what hurt you and understand it properly.
-
-I made this little page hoping it might bring a tiny smile to your day. The cats are very proud of their work, by the way. 🐈
-
-Take your time, Anu. I hope we can work through this with patience and care, one step at a time. 🌷</p>
-   <div class="signature">with care, always ♡</div>
-   <div class="actions">
-    <button class="btn" onclick="copyLetter()">♡ Copy this note</button>
-    <button class="btn alt" onclick="sendHearts()">A little heart shower 💗</button>
-   </div>
-  </article>
- </div>
-</section>
-
-<!-- GAMES -->
-<section class="section" id="games">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">anu's tiny kitty world</span>
-   <h2>Welcome to cat duties 🐾</h2>
-   <p>Feed the loaf, dress the kitty and find a hidden heart.</p>
-  </div>
-  <div class="games-grid">
-   <article class="panel game">
-    <div class="game-top">Game 01 · Snack time</div>
-    <div class="game-illustration" id="feedCat">🐈</div>
-    <h3>Feed the little loaf 🍓</h3>
-    <p>This kitty has been waiting very patiently for its treats.</p>
-    <div class="meter"><span id="feedBar"></span></div>
-    <div class="game-result" id="feedResult">Treats: 0 / 5</div>
-    <button class="btn" onclick="feedKitty()">Give a treat 🍓</button>
-   </article>
-
-   <article class="panel game">
-    <div class="game-top">Game 02 · Fashion</div>
-    <div class="game-illustration" id="dressCat">🐱</div>
-    <h3>Dress-up kitty 🎀</h3>
-    <p>The tiny fashion department needs your expert opinion.</p>
-    <div class="choices">
-     <button onclick="dressKitty('🎀')">🎀 Bow</button>
-     <button onclick="dressKitty('👑')">👑 Crown</button>
-     <button onclick="dressKitty('🌸')">🌸 Flower</button>
-     <button onclick="dressKitty('🧢')">🧢 Cap</button>
+  <div class="envelope-area">
+    <div class="envelope">
+      <div class="envelope-content">
+        <div class="seal">♡</div>
+        <div class="handwriting">To my sweetest Anu</div>
+        <p>sealed with the softest pink bow ୨୧</p>
+        <button class="primary" id="openLetter">open my letter ♡</button>
+      </div>
     </div>
-    <div class="game-result" id="dressResult">Choose an accessory!</div>
-   </article>
 
-   <article class="panel game">
-    <div class="game-top">Game 03 · Treasure hunt</div>
-    <div class="game-illustration" id="heartArt">💌</div>
-    <h3>Find the hidden heart 💗</h3>
-    <p>One of these three boxes contains a tiny surprise.</p>
-    <div class="heart-box">
-     <button onclick="findHeart(0)">🎁 1</button>
-     <button onclick="findHeart(1)">🎁 2</button>
-     <button onclick="findHeart(2)">🎁 3</button>
+    <article class="letter" id="letter">
+      <h3>My dearest Anuuu, ♡</h3>
+
+      <p>Hiii meri pyaari si Anu 💗</p>
+
+      <p>
+        I know you're upset, and I don't want to act like a cute
+        website can fix everything. I just wanted to make something
+        for you because you matter to me.
+      </p>
+
+      <p>
+        I'm sorry for my part in what happened. I don't want to
+        make excuses or turn this into a conversation about who's
+        right. I want to understand how you felt and what I could
+        have done differently.
+      </p>
+
+      <p>
+        You deserve to be heard properly. I want you to feel
+        comfortable telling me when something hurts, even if
+        it's difficult for me to hear. Your feelings aren't
+        something I want to dismiss.
+      </p>
+
+      <p>
+        I'm not asking you to stop being upset right now, okay?
+        Take your time, meri jaan. When you're ready, I want to
+        listen calmly and understand you instead of rushing to
+        defend myself.
+      </p>
+
+      <p>
+        I know words only mean so much if my actions don't match
+        them. I want to keep working on how I communicate with you
+        and how I handle misunderstandings.
+      </p>
+
+      <p>
+        Until then, imagine four tiny kittens bringing you flowers,
+        a strawberry cake and the biggest virtual hug ever. 🌷🍓🫂
+      </p>
+
+      <p class="handwriting">
+        I'm sorry, Anuuu. You mean a lot to me. ♡
+      </p>
+
+      <p class="signature">with love, just for you 💗</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">little things i want to do better</span>
+  <h2>My tiny promises 🎀</h2>
+  <p class="intro">Not perfect promises. Just things I genuinely want to work on.</p>
+
+  <div class="promises">
+    <div class="promise"><span>🌸</span><div>Listen to understand you, not just to reply.</div></div>
+    <div class="promise"><span>🩷</span><div>Take responsibility when I've hurt your feelings.</div></div>
+    <div class="promise"><span>🧸</span><div>Try to stay calm and talk things through respectfully.</div></div>
+    <div class="promise"><span>🌷</span><div>Give you time and space when you need it.</div></div>
+    <div class="promise"><span>💌</span><div>Show you through my actions that I'm learning from mistakes.</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">a tiny place for your smile</span>
+  <h2>Anu's kitty garden 🐈</h2>
+  <p class="intro">
+    These little kitties have absolutely no responsibilities.
+    Their only job is to be adorable.
+  </p>
+
+  <div class="kitty-world">
+    <div class="kitty-grid">
+
+      <div class="kitty-tile">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Pink bow kitten">
+          <path d="M25 39 L19 9 L43 30 M75 39 L81 9 L57 30" fill="#fff9f4" stroke="#d6a0b5" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M24 19 L39 31 L28 35 Z M76 19 L61 31 L72 35 Z" fill="#f3a4c0"/>
+          <ellipse cx="50" cy="56" rx="31" ry="29" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+          <ellipse cx="40" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <ellipse cx="60" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <path d="M47 62 L50 65 L53 62" fill="none" stroke="#c86e93" stroke-width="2"/>
+          <ellipse cx="35" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <ellipse cx="65" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <path d="M34 30 Q22 14 17 29 Q18 42 39 40Z" fill="#ffafcb" stroke="#e779a3" stroke-width="2"/>
+          <path d="M66 30 Q78 14 83 29 Q82 42 61 40Z" fill="#ffafcb" stroke="#e779a3" stroke-width="2"/>
+          <circle cx="50" cy="35" r="6" fill="#e879a3"/>
+        </svg>
+        <p>Bow Kitty</p>
+        <button onclick="feed(this,'Bow Kitty')">give a flower 🌸</button>
+      </div>
+
+      <div class="kitty-tile">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Sleepy kitten">
+          <path d="M25 39 L19 9 L43 30 M75 39 L81 9 L57 30" fill="#fff9f4" stroke="#d6a0b5" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="50" cy="56" rx="31" ry="29" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+          <path d="M34 55 Q40 61 45 55 M55 55 Q60 61 66 55" fill="none" stroke="#80516a" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M47 63 L50 66 L53 63" fill="none" stroke="#c86e93" stroke-width="2"/>
+          <ellipse cx="35" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <ellipse cx="65" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <text x="72" y="24" font-size="17" fill="#d779a0">z</text>
+        </svg>
+        <p>Sleepy Kitty</p>
+        <button onclick="feed(this,'Sleepy Kitty')">give a pillow ☁️</button>
+      </div>
+
+      <div class="kitty-tile">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Strawberry kitten">
+          <path d="M25 39 L19 9 L43 30 M75 39 L81 9 L57 30" fill="#fff9f4" stroke="#d6a0b5" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="50" cy="56" rx="31" ry="29" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+          <ellipse cx="40" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <ellipse cx="60" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <path d="M47 62 L50 65 L53 62" fill="none" stroke="#c86e93" stroke-width="2"/>
+          <ellipse cx="35" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <ellipse cx="65" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <path d="M34 30 Q22 14 17 29 Q18 42 39 40Z" fill="#ffafcb" stroke="#e779a3" stroke-width="2"/>
+          <path d="M66 30 Q78 14 83 29 Q82 42 61 40Z" fill="#ffafcb" stroke="#e779a3" stroke-width="2"/>
+          <path d="M40 12 L43 17 L49 16 L46 22 L50 26 L44 25 L41 30 L39 24 L33 23 L38 19Z" fill="#ef6f98"/>
+        </svg>
+        <p>Berry Kitty</p>
+        <button onclick="feed(this,'Berry Kitty')">give a berry 🍓</button>
+      </div>
+
+      <div class="kitty-tile">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Little angel kitten">
+          <path d="M25 39 L19 9 L43 30 M75 39 L81 9 L57 30" fill="#fff9f4" stroke="#d6a0b5" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="50" cy="56" rx="31" ry="29" fill="#fffaf5" stroke="#d6a0b5" stroke-width="2"/>
+          <ellipse cx="40" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <ellipse cx="60" cy="55" rx="3" ry="5" fill="#80516a"/>
+          <path d="M47 62 L50 65 L53 62" fill="none" stroke="#c86e93" stroke-width="2"/>
+          <ellipse cx="35" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <ellipse cx="65" cy="63" rx="5" ry="3" fill="#ffc1d6"/>
+          <path d="M35 27 Q25 14 18 26 Q22 37 39 37Z" fill="#fff" stroke="#e9bdd0" stroke-width="2"/>
+          <path d="M65 27 Q75 14 82 26 Q78 37 61 37Z" fill="#fff" stroke="#e9bdd0" stroke-width="2"/>
+          <ellipse cx="50" cy="28" rx="19" ry="4" fill="none" stroke="#efb45c" stroke-width="3"/>
+        </svg>
+        <p>Angel Kitty</p>
+        <button onclick="feed(this,'Angel Kitty')">give a star ✨</button>
+      </div>
+
     </div>
-    <div class="game-result" id="heartResult">Pick a box!</div>
-    <button class="softbtn" onclick="resetHeart()">Try another round ↻</button>
-   </article>
+    <p class="game-message" id="kittyMessage">Choose a little treat for your kitty ♡</p>
+  </div>
+</section>
 
-   <article class="panel game">
-    <div class="game-top">Game 04 · Tiny wishes</div>
-    <div class="game-illustration" id="wishArt">🌷</div>
-    <h3>Pick a little wish ✨</h3>
-    <p>Tap for a gentle reminder to carry through the day.</p>
-    <button class="btn" onclick="randomWish()">Pick my wish</button>
-    <div class="game-result" id="wishResult">Your wish is waiting...</div>
-   </article>
+<section class="section paper-bg">
+  <span class="eyebrow">only if you want to</span>
+  <h2>Can we talk, Anu? 🥹</h2>
+  <p class="intro">
+    You don't have to forgive me immediately.
+    I just want to respect how you're feeling.
+  </p>
 
-   <article class="panel game">
-    <div class="game-top">Game 05 · Quick quiz</div>
-    <div class="game-illustration">🌈</div>
-    <h3>Choose your comfort</h3>
-    <p>What would make a difficult day feel a little softer?</p>
-    <div class="choices">
-     <button onclick="comfort('A cozy nap 💤')">A cozy nap</button>
-     <button onclick="comfort('A cute cat 🐈')">A cute cat</button>
-     <button onclick="comfort('A calm chat 🌷')">A calm chat</button>
+  <div class="reply">
+    <div style="font-size:45px">💌</div>
+    <p style="line-height:1.9">
+      Whenever you're ready, I'd like to listen.
+      No pressure to answer right now, meri Anu.
+    </p>
+
+    <div class="reply-buttons">
+      <button class="primary" onclick="reply('talk')">let's talk ♡</button>
+      <button class="secondary" onclick="reply('time')">need some time 🌷</button>
+      <button class="secondary" onclick="reply('hug')">just a hug 🫂</button>
     </div>
-    <div class="game-result" id="comfortResult">There is no wrong answer ♡</div>
-   </article>
 
-   <article class="panel game">
-    <div class="game-top">Game 06 · Make a wish</div>
-    <div class="game-illustration" id="starArt">⭐</div>
-    <h3>Catch a falling star</h3>
-    <p>Tap the button and see what little message appears.</p>
-    <button class="btn" onclick="catchStar()">Catch a star ⭐</button>
-    <div class="game-result" id="starResult">Ready when you are!</div>
-   </article>
+    <p id="replyMessage" aria-live="polite"></p>
   </div>
- </div>
-</section>
-
-<!-- NOTES -->
-<section class="section" id="notes">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">tiny notes, gentle thoughts</span>
-   <h2>Open a little card 🌸</h2>
-   <p>Each card has a different message. Tap whichever one catches your eye.</p>
-  </div>
-  <div class="note-grid">
-   <button class="note-tile" onclick="openNote(0)"><span class="nicon">🎀</span>For a little encouragement</button>
-   <button class="note-tile" onclick="openNote(1)"><span class="nicon">🐈</span>Official kitty report</button>
-   <button class="note-tile" onclick="openNote(2)"><span class="nicon">🌷</span>For a difficult day</button>
-   <button class="note-tile" onclick="openNote(3)"><span class="nicon">💌</span>A thoughtful thought</button>
-   <button class="note-tile" onclick="openNote(4)"><span class="nicon">☁️</span>When you need a pause</button>
-   <button class="note-tile" onclick="openNote(5)"><span class="nicon">🌙</span>A quiet reminder</button>
-   <button class="note-tile" onclick="openNote(6)"><span class="nicon">🧸</span>Comfort corner</button>
-   <button class="note-tile" onclick="openNote(7)"><span class="nicon">✨</span>A tiny bit of magic</button>
-  </div>
- </div>
-</section>
-
-<!-- OPTIONAL PHOTO GALLERY -->
-<section class="section" id="gallery">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">your own little scrapbook</span>
-   <h2>Add your favourite pictures 📸</h2>
-   <p>Choose pictures from your device. They appear on this page without being uploaded to a server.</p>
-  </div>
-  <div class="album">
-   <label class="photo-slot"><span>🌷<br>Add a picture<br><small>Tap to choose</small></span><input type="file" accept="image/*" onchange="previewPhoto(event,this)"></label>
-   <label class="photo-slot"><span>🎀<br>Add another picture<br><small>Tap to choose</small></span><input type="file" accept="image/*" onchange="previewPhoto(event,this)"></label>
-   <label class="photo-slot"><span>🐈<br>Add a cute picture<br><small>Tap to choose</small></span><input type="file" accept="image/*" onchange="previewPhoto(event,this)"></label>
-  </div>
- </div>
-</section>
-
-<!-- SURPRISE -->
-<section class="section" id="surprise">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">a little extra something</span>
-   <h2>There's a tiny surprise 🎁</h2>
-   <p>Nothing to unlock or prove. Just open it when you feel like it.</p>
-  </div>
-  <div class="panel surprise">
-   <div class="gift">🎁</div>
-   <h3>A small message, just for you</h3>
-   <p>Shall we open the little gift?</p>
-   <button class="btn" onclick="openSurprise()">Open surprise ♡</button>
-   <div class="surprise-content" id="surpriseContent">
-    <div style="font-size:3rem">🌷🐈💗</div>
-    <h3>A gentle reminder</h3>
-    <p>Your feelings deserve to be heard. You can take your time, set boundaries and say what you need.</p>
-    <p>Even when things are difficult, patience and an honest conversation can help us understand one another.</p>
-    <button class="btn alt" onclick="sendHearts()">A little shower of hearts ✨</button>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- BACKGROUND -->
-<section class="section" id="themes">
- <div class="container">
-  <div class="heading">
-   <span class="kicker">make it your vibe</span>
-   <h2>Choose a background 🎨</h2>
-   <p>Switch the colour theme or upload your own image.</p>
-  </div>
-  <div class="panel">
-   <div class="theme-grid">
-    <button class="theme active" data-label="Pink Dream" style="background:linear-gradient(135deg,#ffb8d3,#fff0d8)" onclick="setTheme('pink',this)" aria-label="Pink theme"></button>
-    <button class="theme" data-label="Lilac Sky" style="background:linear-gradient(135deg,#d8c7ff,#fce0f0)" onclick="setTheme('lilac',this)" aria-label="Lilac theme"></button>
-    <button class="theme" data-label="Mint Cloud" style="background:linear-gradient(135deg,#d4f4e7,#fff3d9)" onclick="setTheme('mint',this)" aria-label="Mint theme"></button>
-    <button class="theme" data-label="Peach Tea" style="background:linear-gradient(135deg,#ffd8c2,#fff0e6)" onclick="setTheme('peach',this)" aria-label="Peach theme"></button>
-    <button class="theme" data-label="Night Sky" style="background:linear-gradient(135deg,#222342,#755b90)" onclick="setTheme('night',this)" aria-label="Night theme"></button>
-   </div>
-   <div class="upload-row">
-    <label class="btn alt">＋ Upload background
-     <input type="file" accept="image/*" hidden onchange="uploadBackground(event)">
-    </label>
-    <button class="softbtn" onclick="resetTheme()">Reset background ↻</button>
-   </div>
-   <p style="font-size:.85rem;color:var(--muted)">Uploaded background images are read locally in your browser. For a permanent background on GitHub Pages, add an image file to your repository and use it in the CSS.</p>
-  </div>
- </div>
 </section>
 </main>
 
-<footer class="footer">
- <div class="container">
-  <div class="footer-cat">🐈 🌸 🐈‍⬛</div>
-  <p>A little corner filled with tiny things and thoughtful words.</p>
-  <div class="footer-heart">♡ For Anu ♡</div>
-  <p style="font-size:.82rem">Take your time. Be gentle with yourself, too.</p>
-  <button class="softbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to the top ↑</button>
- </div>
+<footer>
+  <div class="handwriting">a little world for Anu ♡</div>
+  <p>filled with tiny bows, softer words & pink wishes 🎀</p>
+  <p style="font-size:12px">made with love, just for you · ୨୧</p>
 </footer>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="modal-card">
-  <div class="modal-art" id="modalArt">🌷</div>
-  <h3 id="modalTitle">A little note</h3>
-  <p id="modalText"></p>
-  <button class="btn" id="modalClose" onclick="closeModal()">Close ♡</button>
- </div>
-</div>
+<button class="backtop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-const $=id=>document.getElementById(id);
-let treats=0;
-let hiddenHeart=Math.floor(Math.random()*3);
-let toastTimer;
+const heartLayer = document.getElementById('hearts');
+const symbols = ['♡','♥','✧','୨୧','✿','♥'];
 
-function goTo(id){
- $(id).scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function toast(message){
- const t=$('toast');
- t.textContent=message;
- t.classList.add('show');
- clearTimeout(toastTimer);
- toastTimer=setTimeout(()=>t.classList.remove('show'),2600);
-}
-
-function sendHearts(){
- const symbols=['💗','♡','🌸','✨','💌','🌷','🎀'];
- for(let i=0;i<22;i++){
-  const h=document.createElement('span');
-  h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-  h.style.cssText=`position:fixed;left:${Math.random()*96}vw;bottom:${Math.random()*35}px;font-size:${18+Math.random()*20}px;animation:rise ${1.5+Math.random()*1.6}s ease-out forwards`;
-  $('floatingHearts').appendChild(h);
-  setTimeout(()=>h.remove(),3400);
- }
- toast('A little shower of hearts ♡');
+function makeHeart() {
+  const el = document.createElement('span');
+  el.className = 'heart';
+  el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left = Math.random()*100 + '%';
+  el.style.fontSize = (12+Math.random()*22)+'px';
+  el.style.color = ['#f18bb2','#d975a0','#e9a9cb','#ffb9d0'][Math.floor(Math.random()*4)];
+  const duration = 8+Math.random()*9;
+  el.style.animationDuration = duration+'s';
+  heartLayer.appendChild(el);
+  setTimeout(()=>el.remove(),duration*1000);
 }
 
-function feedKitty(){
- if(treats>=5){toast('The kitty is full and needs a nap 💤');return}
- treats++;
- $('feedBar').style.width=(treats*20)+'%';
- $('feedCat').textContent=treats===5?'😻':'🐈';
- const messages=[
-  'Nom nom. Very tasty!','The whiskers approve 🍓',
-  'Purrs increasing rapidly!','Almost full, little loaf!',
-  'Maximum purr achieved. Kitty says thank you! 😻'
- ];
- $('feedResult').textContent=`Treats: ${treats}/5`;
- toast(messages[treats-1]);
- if(treats===5)$('feedResult').textContent='Best kitty caretaker award 🏆';
+setInterval(makeHeart,650);
+
+function go(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-function dressKitty(accessory){
- $('dressCat').textContent=accessory+'🐱';
- $('dressResult').textContent='Fashion icon. Absolutely iconic ✨';
+document.getElementById('openLetter').addEventListener('click',function(){
+  const letter = document.getElementById('letter');
+  letter.classList.add('open');
+  this.textContent = 'letter opened ♡';
+  letter.scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+function feed(button,name) {
+  const messages = {
+    'Bow Kitty':'Bow Kitty got a flower and is purring happily! 🌸',
+    'Sleepy Kitty':'Sleepy Kitty is tucked in for a cosy nap! ☁️',
+    'Berry Kitty':'Berry Kitty found the sweetest strawberry! 🍓',
+    'Angel Kitty':'Angel Kitty is sending Anu a tiny wish! ✨'
+  };
+  document.getElementById('kittyMessage').textContent=messages[name];
+  button.textContent='thank you ♡';
 }
 
-function findHeart(choice){
- if(choice===hiddenHeart){
-  $('heartArt').textContent='😻';
-  $('heartResult').textContent='You found the heart! 💗';
-  toast('Tiny treasure found!');
- }else{
-  $('heartArt').textContent='🐈';
-  $('heartResult').textContent='Not this box. Try another!';
- }
-}
-function resetHeart(){
- hiddenHeart=Math.floor(Math.random()*3);
- $('heartArt').textContent='💌';
- $('heartResult').textContent='Pick a box!';
+function reply(choice) {
+  const box=document.getElementById('replyMessage');
+  const messages={
+    talk:'Okay, Anuuu 💗 I want to listen and understand you, without rushing you.',
+    time:'Of course, meri Anu 🌷 Take the time you need. Your feelings matter.',
+    hug:'Sending you the biggest virtual hug 🫂💗 and a tiny kitty to keep you company.'
+  };
+  box.textContent=messages[choice];
 }
 
-const wishes=[
- 'May something small make you smile today 🌷',
- 'Remember to give yourself a little kindness ☁️',
- 'You can take things one step at a time 🐾',
- 'A peaceful moment is worth celebrating 🌙',
- 'May your day bring a little unexpected joy ✨',
- 'It is okay to rest and start again tomorrow 🎀',
- 'May you feel heard, respected and understood 💗'
-];
-function randomWish(){
- $('wishArt').textContent=['🌷','⭐','☁️','🌈','🌙'][Math.floor(Math.random()*5)];
- $('wishResult').textContent=wishes[Math.floor(Math.random()*wishes.length)];
-}
-function comfort(choice){
- $('comfortResult').textContent=choice+' sounds lovely. Take care of yourself ♡';
-}
-function catchStar(){
- const messages=[
-  'A little sparkle for your day ✨',
-  'One gentle step is still progress 🌷',
-  'Your favourite kitty sends a tiny wave 🐈',
-  'May the next hour be a little easier 💗',
-  'A reminder to take a nice, deep breath ☁️'
- ];
- $('starArt').textContent=['⭐','🌟','💫'][Math.floor(Math.random()*3)];
- $('starResult').textContent=messages[Math.floor(Math.random()*messages.length)];
-}
-
-const notes=[
- {icon:'🎀',title:'A little encouragement',text:'You do not have to get everything right today. Trying your best and taking breaks both count. ♡'},
- {icon:'🐈',title:'Official kitty report',text:'The tiny kitty committee recommends a snack, a comfortable blanket and a little time to yourself. Report signed by three sleepy cats. 😸'},
- {icon:'🌷',title:'For a difficult day',text:'Not every problem needs to be solved in one moment. Take one small step, and give yourself permission to pause.'},
- {icon:'💌',title:'A thoughtful thought',text:'People can care about each other and still misunderstand one another sometimes. Listening and honesty help bridge that gap.'},
- {icon:'☁️',title:'When you need a pause',text:'Put down the pressure for a moment. Drink some water, stretch if you want, and let yourself have a quiet minute.'},
- {icon:'🌙',title:'A quiet reminder',text:'You do not need to have all the answers tonight. Rest can be a good first step.'},
- {icon:'🧸',title:'Comfort corner',text:'Imagine a soft blanket, a warm cup of something nice and a kitten sleeping nearby. No tasks, just a peaceful little moment.'},
- {icon:'✨',title:'A tiny bit of magic',text:'Sometimes a small kind thing changes the mood of a whole day. May you find one when you least expect it.'}
-];
-
-function openNote(index){
- $('modalArt').textContent=notes[index].icon;
- $('modalTitle').textContent=notes[index].title;
- $('modalText').textContent=notes[index].text;
- $('modal').classList.add('open');
- $('modalClose').focus();
-}
-function closeModal(){$('modal').classList.remove('open')}
-$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-
-function openSurprise(){
- $('surpriseContent').classList.toggle('open');
- if($('surpriseContent').classList.contains('open')){
-  toast('A little surprise is open ♡');
-  goTo('surprise');
- }
-}
-
-function copyLetter(){
- const text=$('letterText').innerText;
- if(navigator.clipboard&&window.isSecureContext){
-  navigator.clipboard.writeText(text)
-   .then(()=>toast('Note copied ♡'))
-   .catch(()=>fallbackCopy(text));
- }else fallbackCopy(text);
-}
-function fallbackCopy(text){
- const a=document.createElement('textarea');
- a.value=text;a.style.position='fixed';a.style.opacity='0';
- document.body.appendChild(a);a.select();
- try{document.execCommand('copy');toast('Note copied ♡')}
- catch(e){toast('Please select and copy the note manually.')}
- a.remove();
-}
-
-const backgrounds={
- pink:'linear-gradient(140deg,#fff0f7,#f5edff 52%,#fff4e5)',
- lilac:'linear-gradient(140deg,#e5dcff,#fbe8f4,#eaf0ff)',
- mint:'linear-gradient(140deg,#d8f4e8,#fff5d9,#d9edff)',
- peach:'linear-gradient(140deg,#ffe1ce,#fff0e6,#ffddeb)',
- night:'linear-gradient(140deg,#19152f,#332346,#1e263d)'
-};
-function setTheme(name,button){
- document.body.style.backgroundImage=backgrounds[name];
- document.body.classList.toggle('dark',name==='night');
- document.body.style.backgroundSize='cover';
- $('darkBtn').textContent=name==='night'?'☀️':'🌙';
- document.querySelectorAll('.theme').forEach(t=>t.classList.remove('active'));
- if(button)button.classList.add('active');
-}
-function resetTheme(){
- document.body.style.backgroundImage=backgrounds.pink;
- document.body.style.backgroundSize='';
- document.body.classList.remove('dark');
- $('darkBtn').textContent='🌙';
- document.querySelectorAll('.theme').forEach(t=>t.classList.remove('active'));
- document.querySelector('.theme').classList.add('active');
- toast('Welcome back to Pink Dream 🌸');
-}
-function toggleDark(){
- const dark=!document.body.classList.contains('dark');
- document.body.classList.toggle('dark',dark);
- document.body.style.backgroundImage=dark?backgrounds.night:backgrounds.pink;
- $('darkBtn').textContent=dark?'☀️':'🌙';
- document.querySelectorAll('.theme').forEach(t=>t.classList.remove('active'));
- document.querySelector(`.theme[data-label="${dark?'Night Sky':'Pink Dream'}"]`).classList.add('active');
-}
-
-function uploadBackground(event){
- const file=event.target.files&&event.target.files[0];
- if(!file)return;
- if(!file.type.startsWith('image/')){toast('Choose an image file, please.');return}
- if(file.size>8*1024*1024){toast('Choose a picture smaller than 8 MB.');return}
- const reader=new FileReader();
- reader.onload=()=>{
-  document.body.style.backgroundImage=`linear-gradient(#fff2f640,#fff2f640),url("${reader.result}")`;
-  document.body.style.backgroundSize='cover';
-  document.body.style.backgroundPosition='center';
-  document.body.style.backgroundAttachment='fixed';
-  document.body.classList.remove('dark');
-  $('darkBtn').textContent='🌙';
-  toast('New background, new vibe ✨');
- };
- reader.readAsDataURL(file);
-}
-
-function previewPhoto(event,label){
- const file=event.target.files&&event.target.files[0];
- if(!file)return;
- if(!file.type.startsWith('image/')){toast('Please choose a photo.');return}
- if(file.size>8*1024*1024){toast('Choose a photo smaller than 8 MB.');return}
- const reader=new FileReader();
- reader.onload=()=>{
-  const old=label.querySelector('img');
-  if(old)old.remove();
-  const img=document.createElement('img');
-  img.src=reader.result;
-  img.alt='Your chosen scrapbook picture';
-  label.appendChild(img);
-  label.classList.add('has-photo');
-  const span=label.querySelector('span');
-  if(span)span.style.opacity='.0';
-  toast('Picture added to your scrapbook ♡');
- };
- reader.readAsDataURL(file);
-}
-
-// Falling decorative petals, with no motion if the user requests reduced motion.
-function makePetal(){
- if(document.hidden||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- const p=document.createElement('span');
- p.className='particle';
- p.textContent=['🌸','♡','✿','✨'][Math.floor(Math.random()*4)];
- p.style.left=Math.random()*100+'vw';
- p.style.fontSize=(12+Math.random()*15)+'px';
- const duration=7+Math.random()*8;
- p.style.animationDuration=duration+'s';
- $('particles').appendChild(p);
- setTimeout(()=>p.remove(),duration*1000);
-}
-setInterval(makePetal,850);
-
-// Small active link highlight while browsing.
-const sections=[...document.querySelectorAll('main section[id]')];
-if('IntersectionObserver' in window){
- const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-   if(entry.isIntersecting){
-    document.querySelectorAll('.navlinks a').forEach(a=>{
-     a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id);
-    });
-   }
-  });
- },{rootMargin:'-25% 0px -65% 0px'});
- sections.forEach(section=>observer.observe(section));
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.heart').forEach(h=>h.remove());
 }
 </script>
 </body>
